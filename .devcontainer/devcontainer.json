@@ -1,0 +1,10 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "forwardPorts": [
+    8080],
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/tomcat-sdkman:2": {},
+    "ghcr.io/devcontainers-contrib/features/ant-sdkman:2": {}
+  }
+  }
+
