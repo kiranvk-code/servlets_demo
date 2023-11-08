@@ -1,41 +1,38 @@
 # SimpleServletApp README
 
 ## Description
-This is a basic Java servlet application demonstrating handling GET and POST requests. The build and deployment process utilizes Apache Ant and the app is deployable on Apache Tomcat.
+This Java servlet application responds to GET and POST requests. It's built with Ant for easy compilation and packaging, and is designed to run on Apache Tomcat.
 
 ## Prerequisites
-- JDK 8 or above installed
-- Apache Ant installed
-- Apache Tomcat 10.1.14 installed at `/usr/local/sdkman/candidates/tomcat/10.1.14`
+- JDK 8 or higher
+- Apache Ant
+- Apache Tomcat at `/usr/local/sdkman/candidates/tomcat/10.1.14`
 
-## File Structure
-- `src/`: Contains the servlet Java source files.
-- `WebContent/`: Contains web content including WEB-INF.
-- `lib/`: Contains all the necessary libraries.
-- `build.xml`: Ant build script for the project.
-- `web.xml`: Deployment descriptor file.
+## Project Structure
+- `src/`: Source files for the servlet.
+- `WebContent/`: Web files and WEB-INF directory.
+- `WebContent/WEB-INF/web.xml`: Servlet configuration.
+- `build.xml`: Ant build script located at the project root.
+- `lib/`: Directory for library dependencies at the project root.
 
-## Setup Instructions
-1. **Include Servlet API**: 
-   - Download the `servlet-api.jar` from the appropriate source.
-   - Place it into the `lib/` directory of your project.
+## Building and Deploying
+1. **Include Servlet API**:
+   - Download `servlet-api.jar`.
+   - Place it in the `lib/` directory.
 
-2. **Build the Application**:
-   - Run `ant compile` to compile the servlet classes.
-   - Execute `ant package` to create the WAR file in the `dist/` directory.
+2. **Build with Ant**:
+   - `build.xml` should be at the root of your project directory.
+   - Run `ant` to compile and package the application into `dist/SimpleWebApp.war`.
 
-3. **Deploying on Tomcat**:
-   - Stop Tomcat: `/usr/local/sdkman/candidates/tomcat/10.1.14/bin/catalina.sh stop`
-   - Copy the WAR file to the `webapps` directory of Tomcat:
-     ```
-     cp dist/SimpleWebApp.war /usr/local/sdkman/candidates/tomcat/10.1.14/webapps/
-     ```
-   - Start Tomcat: `/usr/local/sdkman/candidates/tomcat/10.1.14/bin/catalina.sh start`
+3. **Deploy on Tomcat**:
+   - Stop Tomcat: `./catalina.sh stop` from the Tomcat bin directory.
+   - Copy `dist/SimpleWebApp.war` to the `webapps` directory of Tomcat.
+   - Start Tomcat: `./catalina.sh start`.
 
-4. **Accessing the Servlet**:
-   - Open a browser and go to `http://localhost:8080/SimpleWebApp/SimpleServlet`.
+4. **Access the Servlet**:
+   - Visit `http://localhost:8080/SimpleWebApp/SimpleServlet`.
 
-5. **Testing POST Method**:
-   - Use a tool like `curl` or Postman to send a POST request to your servlet at `http://localhost:8080/SimpleWebApp/SimpleServlet`.
+5. **Test POST Method**:
+   - Use `curl` or Postman to send a POST request to the servlet's URL.
 
-Make sure to follow each instruction carefully to ensure the servlet is compiled, packaged, and deployed correctly.
+Follow these instructions for setting up, building, and deploying your servlet application.
